@@ -1,0 +1,11 @@
+{
+  "name": "BOSSA_Platform",
+  "version": "1.0.0",
+  "description": "BOSSA Platform",
+  "title": "BOSSA Platform",
+  "url" : "https://api.iitrtclab.com/apidoc",
+  "template": {
+  	"withCompare": false,
+  	"withGenerator": true
+  }
+}

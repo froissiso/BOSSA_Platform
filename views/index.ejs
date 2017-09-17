@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%=typeof title == 'undefined' ? 'BOSSA Platform' : title%></title>
+
+  <!-- Viewport mobile tag for sensible mobile support -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+          -->
+
+          <!--STYLES-->
+          <link rel="stylesheet" href="/styles/bootstrap.css">
+          <link rel="stylesheet" href="/styles/importer.css">
+
+          <link rel="stylesheet" href="/styles/navbar.css">
+
+          <!--<script type="text/javascript" src="/js/snackbar.js"></script>
+          <script type="text/javascript" src="/js/snackbar.min.js"></script>
+          <link type="text/css" rel="stylesheet" href="/styles/snackbar.css">
+          <link type="text/css" rel="stylesheet" href="/styles/snackbar.min.css">-->
+
+          <!--STYLES END-->
+        </head>
+        <div class="container">
+
+          <body>
+            <nav class="navbar navbar-inverse navbar-static-top">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <a class="navbar-brand" href="/">BOSSA Platform</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                  <form action="/authentication" class="navbar-form navbar-right">
+                    
+                    <% if (req.session.me) { %>
+                    <a class="navbar-text"><font color="white">Logged in as </font><i><font color="grey"><%= req.session.me%></font></i></a>&nbsp;&nbsp;
+                    <a class="btn btn-warning" href="/logout" role="button">Logout</a>
+                    
+                    <% } else { %>
+                      <!-- <a href="/login">Login</a> | <a href="/signup">Signup</a> -->
+                      <div class="dropdown">
+                        <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          <font color="white">Login</font>
+                          <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                          <!-- <ul class="dropdown-menu" style="padding:17px;"> -->
+                          <!-- <li><a href="#">HTML</a></li>
+                          <li><a href="#">CSS</a></li>
+                          <li><a href="#">JavaScript</a></li> -->
+                          <li><div class="form-group">
+                            <input name="email" type="text" placeholder="Email" class="form-control">
+                          </div></li>
+                          <li><div class="form-group">
+                            <input name="password" type="password" placeholder="Password" class="form-control">
+                          </div></li>
+                          <li><button type="submit" class="btn btn-success">Sign in</button></li>
+                        </ul>
+                      </div>
+                    
+                    <% } %>
+
+                  </form>
+                </div><!--/.navbar-collapse -->
+              </div>
+
+            </nav> 
+
+            <!-- Main jumbotron for a primary marketing message or call to action -->
+            <div class="jumbotron">
+              <div class="container">
+                <h1 align="center">BOSSA Platform</h1>
+                <p align="center">Bluetooth and Sensors Array.</br></br></p>
+                <p align="center"><a class="btn btn-primary btn-lg" href="/apidoc" role="button">Go to APIs Documentation &raquo;</a></p>
+              </div>
+            </div>
+
+
+            <!-- <div class="container"> -->
+            <!-- Example row of columns -->
+      <!-- <div class="row">
+        <div class="col-md-4">
+          <h2>Platform Documentation</h2>
+          <p>Learn about all the APIs available on the platform. <br/><br/></p>
+          <p><a class="btn btn-primary" href="/apidoc" role="button">Go to documentation &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Projects & Publications</h2>
+          <p>Documents and publications concerning the Indoor Location Project and the BOSSA Platform.</p>
+          <p><a class="btn btn-default" href="/documentation" role="button">Go to publications &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Indoor Location Management</h2>
+          <p>Deployment and management tools for the Indoor Location System.</p>
+          <p><a class="btn btn-default" href="https://management.iitrtclab.com" role="button">Go to management section &raquo;</a></p>
+        </div>
+      </div> -->
+
+      <!-- <div class="page-header"> -->
+    </br>
+    <div class="container">
+
+      <!-- <h1>Panels</h1> -->
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="panel panel-info">
+          <div class="panel-heading">
+            <h2 class="panel-title">Platform Documentation</h2>
+          </div>
+          <div class="panel-body">
+            <p>Learn about all the APIs available on the platform. <br/><br/></p>
+            <p><a class="btn btn-primary" href="/apidoc" role="button">Go to APIs Documentation &raquo;</a></p>
+          </div>
+        </div>
+          <!-- <div class="panel panel-primary">
+            <div class="panel-heading">
+              <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+              
+            </div>
+          </div> -->
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="panel panel-success">
+            <div class="panel-heading">
+              <h2 class="panel-title">Projects & Publications</h2>
+            </div>
+            <div class="panel-body">
+              <p>Documents and publications concerning the Indoor Location Project and the BOSSA Platform.</p>
+              <p><a class="btn btn-success" href="/projects_and_publications" role="button">Go to publications &raquo;</a></p>
+            </div>
+          </div>
+          <!-- <div class="panel panel-info">
+            <div class="panel-heading">
+              <h3 class="panel-title"></h3>
+            </div>
+            <div class="panel-body">
+            </div>
+          </div> -->
+        </div><!-- /.col-sm-4 -->
+        <div class="col-sm-4">
+          <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h2 class="panel-title">Indoor Location Management</h2>
+            </div>
+            <div class="panel-body">
+              <p>Deployment and management tools for the Indoor Location System.<br/><br/></p>
+              <% if(req.session.me) { %>
+                <p><a class="btn btn-danger" href="https://management.iitrtclab.com" role="button">Go to management &raquo;</a>
+                <img  src="/images/padlock-open.png" height="28px" width="28px">
+              </p>
+                
+              <% }else{ %>
+                <p><a class="btn btn-danger" disabled  role="button">Go to management &raquo;</a>
+                  <!-- <font size = "2">(Login required)</font> -->
+                  <!-- <img  src="/images/Actions-stop-icon.png" height="28px" width="28px"></p> -->
+                  <img  src="/images/padlock-closed.png" height="28px" width="28px">
+                </p>
+              <% } %>
+            </div>
+          </div>
+          <!-- <div class="panel panel-danger">
+            <div class="panel-heading">
+              <h3 class="panel-title">Panel title</h3>
+            </div>
+            <div class="panel-body">
+              Panel content
+            </div>
+          </div> -->
+        </div><!-- /.col-sm-4 -->
+      </div>
+
+      <hr>
+
+      <footer>
+        <p>&copy; 2017 <a href="https://linkedin.com/in/franciscorois">froissiso</a> <a href="https://appliedtech.iit.edu/rtc-lab">IIT RTC-Lab</a></p>
+        <!-- <p>req.session.me: <%=req.session.me%></p> -->
+        <!-- <button id="snackbar_button" class="waves-effect waves-light btn snackbar" data-pos="top-left">Top Left</button>
+         $('.button').click(function() {     Snackbar.show({text: 'Example notification text.'});  }); %>
+        <div id="snackbar_button">
+          <pre><code class="language-javascript">
+              Snackbar.show({
+                showAction: false,
+              });
+            </code></pre>
+        </div> -->
+
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/js/ie10-viewport-bug-workaround.js"></script>
+    
+
+
+
+
+    <!--
+        Client-side Templates
+        ========================
+
+        HTML templates are important prerequisites of modern, rich client applications.
+        To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+        that you load these templates client-side.
+
+        By default, your Gruntfile is configured to automatically load and precompile
+        client-side JST templates in your `assets/templates` folder, then
+        include them here automatically (between TEMPLATES and TEMPLATES END).
+
+        To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Import templates from other directories
+            + Use a different template engine (handlebars, jade, dust, etc.)
+            + Internationalize your client-side templates using a server-side
+              stringfile before they're served.
+            -->
+
+            <!--TEMPLATES-->
+            
+            <!--TEMPLATES END-->
+
+
+    <!--
+
+      Client-side Javascript
+      ========================
+
+      You can always bring in JS files manually with `script` tags, or asynchronously
+      on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+      take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+      By default, files in your `assets/js` folder are included here
+      automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+      CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+      and concatenated into a single file.
+
+      To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+      For example, here are a few things you could do:
+
+          + Change the order of your scripts
+          + Import scripts from other directories
+          + Use a different preprocessor, like TypeScript
+
+        -->
+
+        <!--SCRIPTS-->
+        <script src="/js/dependencies/sails.io.js"></script>
+        <script src="/js/third-party/bootstrap.js"></script>
+        <!--SCRIPTS END-->
+      </body>
+      </html>
