@@ -2,6 +2,8 @@
 
 a [Sails](http://sailsjs.org) application
 
+Running on https://api.iitrtclab.com
+
 - When installed in a new machine, remember to install all the dependencies from package.json. You can install them manually one by one or you can do it automatically with the command: $ npm install
 
 - This code is a copy of the BOSSA Platform's code, which I developed in a private repository in the IIT Real-Time Communications Lab, in the context of the NG911 Indoor Location Project. In order to make the Platform public, critical files have been configured to be ignored by git. In order to clone and run the webapp you need to include config.js and connection.js in /config, with the information and credentials for the databases.
